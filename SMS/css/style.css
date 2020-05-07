@@ -17,12 +17,13 @@ foreground: #3498db;
   overflow: hidden;
 }
 .top-header {
-  height: 10vh;
-  background-color: aqua;
+  height: 8vh;
+  background-color: #ecf0f1;
 }
 .main {
-  height: 90vh;
-  background-color: darkmagenta;
+  height: 92vh;
+  overflow-y: scroll;
+  background-color: #e1e1e1;
 }
 .logo-area {
   height: 200px;
@@ -52,6 +53,8 @@ nav a {
   font-size: 18px;
   padding-left: 10px !important;
   border-bottom: 2px solid #fafafa;
+  transition: all 0.8s;
+  text-decoration: none !important;
 }
 nav a i {
   font-size: 20px;
@@ -61,8 +64,35 @@ nav a i {
   margin: 0 10px 0 10px !important;
 }
 nav a:hover {
-  text-decoration: none;
   color: #3498db;
-  transition: all 0.8s;
   padding-left: 30px !important;
+}
+.top-title .top-name {
+  line-height: 60px;
+  color: #3498db;
+  font-weight: 600;
+}
+.top-title img {
+  display: inline-block;
+  margin-left: 30px !important;
+}
+.top-header .top-info .info-icon {
+  cursor: pointer;
+  line-height: 53px;
+  font-size: 22px;
+  color: #2c3e50;
+  float: right;
+  padding: 0 20px 0 20px !important;
+}
+.top-header .top-info .info-icon i {
+  padding: 0 10px 0 10px !important;
+}
+.top-header .user-profile {
+  border-radius: 50%;
+  margin: 0 10px 0 10px !important;
+}
+.main-body {
+  margin: 10px !important;
+  background-color: white;
+  height: 800px;
 }
