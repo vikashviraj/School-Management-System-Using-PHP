@@ -1,4 +1,7 @@
 </div>
+</div>
+<!--Main Body end-->
+</div>
     <!-- Body End-->
 </div>
   <!--Footer Links-->

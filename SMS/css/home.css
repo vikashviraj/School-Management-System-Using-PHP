@@ -1,0 +1,41 @@
+.home .info-card{
+    height: 120px;
+    background-color: #ecf0f1;
+    margin:20px!important;
+    border-radius: 3%;
+}
+.home .info-card .info-icon{
+    height:120px;
+    width:40%;
+    float: left;
+    padding:0 20px 0 20px!important;
+}
+.home .info-card .info-icon .fa{
+    line-height:120px;
+    font-size:50px;
+    color:#333;
+    opacity: .6;
+}
+.home .info-card .info-title{
+    width:60%;
+    height:120px;
+    float: left;
+}
+.home .info-card .info-title .top-title{
+    height:60px;
+    padding:10px!important;
+}
+.home .info-card .info-title .top-title span{
+    font-size: 16px;
+    font-weight: 700;
+
+}
+.home .info-card .info-title .bottom-title{
+    height:60px;
+    text-align: center;
+    padding:10px;
+    font-size:28px;
+    font-weight:600;
+    font-family: sans-serif;
+    color:#3498db;
+}
