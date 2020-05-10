@@ -63,6 +63,22 @@ nav a:hover {
   text-decoration: none;
   padding-left: 30px !important;
 }
+/* submenu start */
+.submenu{
+  display: none;
+  transition: all .9s;
+}
+.submenu a{
+  background-color: #fafafa;
+  color:#2c3e50;
+  font-size:16px;
+  margin-bottom:1px!important;
+  padding-left: 20px !important;
+  font-weight:600;
+}
+#submenu a:hover {
+  padding-left: 40px !important;
+}
 /* Menu end */
 
 /* Top header start */
