@@ -45,7 +45,7 @@ nav a {
   display: block;
   padding: 10px !important;
   text-align: left;
-  color: #ecf0f1;
+  color: #ecf0f1!important;
   font-size: 18px;
   padding-left: 10px !important;
   border-bottom: 2px solid #fafafa;
@@ -59,10 +59,11 @@ nav a i {
   margin: 0 10px 0 10px !important;
 }
 nav a:hover {
-  color: #3498db;
   text-decoration: none;
   padding-left: 30px !important;
 }
+
+
 /* submenu start */
 .submenu{
   display: none;
@@ -70,7 +71,7 @@ nav a:hover {
 }
 .submenu a{
   background-color: #fafafa;
-  color:#2c3e50;
+  color:#2c3e50!important;
   font-size:16px;
   margin-bottom:1px!important;
   padding-left: 20px !important;
@@ -78,6 +79,12 @@ nav a:hover {
 }
 #submenu a:hover {
   padding-left: 40px !important;
+}
+#stddropicon,#teadropicon,#stafdropicon{
+  color:#fafafa;
+  font-size:20px;
+  float: right;
+  text-align:center;
 }
 /* Menu end */
 
