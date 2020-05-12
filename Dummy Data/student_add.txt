@@ -1,0 +1,22 @@
+>>Student Add
+1. Name
+2. Gender
+3. Father's name
+4. mother's name
+5. gardian's name
+5. date of birth
+6. father's occupation
+7. mother's occupation
+8. gardian's occupation
+9. admission date
+10. class
+11. section
+12. roll no
+13. address - localaddress, state, city, post, policestation, pincode
+14. phone - primary, alternative
+15. photo
+16. last school details - class, school
+17. religon
+18. cast category
+19. blood group
+20. 
