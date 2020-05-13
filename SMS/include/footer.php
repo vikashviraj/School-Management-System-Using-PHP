@@ -1,6 +1,7 @@
 </div>
 </div>
 <!--Main Body end-->
+<p class="text-center p-2 text-info">2020 &copy Powered by VirajWebGroup</p>
 </div>
     <!-- Body End-->
 </div>

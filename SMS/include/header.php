@@ -10,6 +10,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/student.css">
 </head>
 
 <body>

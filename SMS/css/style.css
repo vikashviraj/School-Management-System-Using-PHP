@@ -120,16 +120,18 @@ nav a:hover {
 /* To header end */
 
 /* Main start */
+.main-container{
+  overflow: hidden;
+}
 .main {
-  height: 90%;
- overflow-y:scroll;
+  height: 620px;
  background-color: #e1e1e1;
+ overflow-y: scroll;
 }
 
 
 .main-body{
   margin:10px!important;
   background-color:white;
-  height:600px;
 }
 /* Main End */
