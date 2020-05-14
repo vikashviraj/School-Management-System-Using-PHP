@@ -30,10 +30,6 @@
                         <td><input type="text" class="form-control" name="pname"></td>
                 </tr>
                 <tr>
-                        <td>Father's Name:</td>
-                        <td><input type="text" class="form-control" name="fname" required></td>
-                </tr>
-                <tr>
                         <td>Father's Occupation:</td>
                         <td><input type="text" class="form-control" name="foccup" required></td>
                 </tr>
@@ -52,29 +48,29 @@
                 <tr>
                         <td>Gender:</td>
                         <td>
-                        <input type="radio" class="form-check-input" name="gender" value="male"> <label>Male </label>
-                        <input type="radio" class="form-check-input" name="gender" value="female"> <label>Female </label>
-                        <input type="radio" class="form-check-input" name="gender" value="other"> <label>Other </label>
+                        <input type="radio" name="gender" value="male"> <label>Male </label>
+                        <input type="radio" name="gender" value="female"> <label>Female </label>
+                        <input type="radio" name="gender" value="other"> <label>Other </label>
                         </td>
                 </tr>
                 <tr>
                         <td>Religion:</td>
                         <td>
                                 <select class="form-control" name="religion">
-                                        <option value="None">None</option>
-                                        <option value="Hindu">Hindu</option>
-                                        <option value="Islam">Islam</option>
-                                        <option value="Sikh">Sikh</option>
-                                        <option value="Other">Other</option>
+                                        <option class="droptext" value="None">None</option>
+                                        <option class="droptext" value="Hindu">Hindu</option>
+                                        <option class="droptext" value="Islam">Islam</option>
+                                        <option class="droptext" value="Sikh">Sikh</option>
+                                        <option class="droptext" value="Other">Other</option>
                                 </select>
                         </td>
                 </tr>
                 <tr>
                         <td>Category:</td>
                         <td>
-                        <input type="radio" class="form-check-input" name="category" value="general"> <label>General </label>
-                        <input type="radio" class="form-check-input" name="category" value="obc"> <label>OBC </label>
-                        <input type="radio" class="form-check-input" name="category" value="scst"> <label>SC/ST </label>
+                        <input type="radio" name="category" value="general"> <label>General </label>
+                        <input type="radio" name="category" value="obc"> <label>OBC </label>
+                        <input type="radio" name="category" value="scst"> <label>SC/ST </label>
                         </td>
                 </tr>
                 <tr>

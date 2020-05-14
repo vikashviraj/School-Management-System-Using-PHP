@@ -90,7 +90,7 @@ nav a:hover {
 
 /* Top header start */
 .top-header {
-  height: 10%;
+  height: 60px;
   background-color: #ecf0f1;
 }
 .top-title .top-name{
@@ -124,14 +124,16 @@ nav a:hover {
   overflow: hidden;
 }
 .main {
-  height: 620px;
+  height: 610px;
  background-color: #e1e1e1;
  overflow-y: scroll;
 }
 
 
 .main-body{
+  width:100%;
   margin:10px!important;
   background-color:white;
+  height: auto;
 }
 /* Main End */
