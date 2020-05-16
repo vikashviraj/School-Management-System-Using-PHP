@@ -5,7 +5,10 @@
 ?>
 <div class="container-fluid student_add">
 <div class="row">
-        <div class="col-md-12 bg-info">
+        <div class="col-md-1 bg-info">
+               <div align="center"><a href="index.php" class="btn btn-light text-dark pt-1 pl-3 pr-3 pb-1 mt-1 mb-1"><b>Back</b></a></div>
+        </div>
+        <div class="col-md-11 bg-info">
                 <h2 class="text-center heading-title">Admission</h2>
         </div>
 </div>
@@ -78,7 +81,7 @@
                         <td><input type="text" class="form-control" name="bgroup" placeholder="Ex:- B+, O-"></td>
                 </tr>
                 <tr>
-                        <td><h4>Address:</h4></td>
+                        <td colspan="2"><h4>Address:</h4> <hr></td>
                 </tr>
                 <tr>
                         <td>Address:</td>
@@ -105,7 +108,7 @@
                         <td><input type="tel" class="form-control" name="alterno"></td>
                 </tr>
                 <tr>
-                        <td><h4>Last School Details:</h4></td>
+                        <td colspan="2"><h4>Last School Details:</h4><hr></td>
                 </tr>
                 <tr>
                         <td>Class:</td>
@@ -135,7 +138,7 @@
                         </td>
                 </tr>
                 <tr>
-                        <td><h4>Admission Details:</h4></td>
+                        <td colspan="2"><h4>Admission Details:</h4><hr></td>
                 </tr>
                 <tr>
                         <td>Class:</td>
@@ -174,9 +177,8 @@
                         <td><input type="date" class="form-control" name="addate"></td>
                 </tr>
                 <tr>
-                        <td><input type="submit" class="btn btn-success" name="register" value="Register"></td>
-                        <td><input type="reset" class="btn btn-danger" value="Reset"></td>
-                        <td><a href="index.php" class="btn btn-primary" title="Dashboard">Cancel</a></td>
+                        <td><input type="submit" class="btn pt-1 pl-3 pr-3 pb-1 btn-success mt-4 mb-3" name="register" value="Register"></td>
+                        <td><input type="reset" class="btn pt-1 pl-3 pr-3 pb-1 btn-danger mt-4 mb-3" value="Reset"></td>
                 </tr>
 
         </table>

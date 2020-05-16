@@ -47,3 +47,12 @@ foreground: #3498db;
     appearance: none;
     margin:0;
 }
+.student_add form hr{
+    border-bottom:3px solid dodgerblue;
+    margin:2px 0 9px 0!important;
+}
+.student_add form h4{
+    color:#e67e22;
+    font-weight:700;
+    margin:10px 0 3px 0!important;
+}
