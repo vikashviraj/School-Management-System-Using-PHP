@@ -13,7 +13,7 @@
         </div>
 </div>
 <div class="row">
-<div class="form">
+<div class="form" action="include/sql/sql_student_add.php">
         <form>
         <table>
                 <tr>
