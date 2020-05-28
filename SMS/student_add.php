@@ -13,8 +13,8 @@
         </div>
 </div>
 <div class="row">
-<div class="form" action="include/sql/sql_student_add.php">
-        <form>
+<div class="form">
+        <form method="POST" action="include/sql/sql_student_add.php" enctype="multipart/form-data">
         <table>
                 <tr>
                         <td>Name:</td>
@@ -51,15 +51,15 @@
                 <tr>
                         <td>Gender:</td>
                         <td>
-                        <input type="radio" name="gender" value="male"> <label>Male </label>
-                        <input type="radio" name="gender" value="female"> <label>Female </label>
-                        <input type="radio" name="gender" value="other"> <label>Other </label>
+                        <input type="radio" name="gender" value="male" required> <label>Male </label>
+                        <input type="radio" name="gender" value="female" required> <label>Female </label>
+                        <input type="radio" name="gender" value="other" required> <label>Other </label>
                         </td>
                 </tr>
                 <tr>
                         <td>Religion:</td>
                         <td>
-                                <select class="form-control" name="religion">
+                                <select class="form-control" name="religion" required>
                                         <option class="droptext" value="None">None</option>
                                         <option class="droptext" value="Hindu">Hindu</option>
                                         <option class="droptext" value="Islam">Islam</option>
@@ -71,14 +71,18 @@
                 <tr>
                         <td>Category:</td>
                         <td>
-                        <input type="radio" name="category" value="general"> <label>General </label>
-                        <input type="radio" name="category" value="obc"> <label>OBC </label>
-                        <input type="radio" name="category" value="scst"> <label>SC/ST </label>
+                        <input type="radio" name="category" value="general" required> <label>General </label>
+                        <input type="radio" name="category" value="obc" required> <label>OBC </label>
+                        <input type="radio" name="category" value="scst" required> <label>SC/ST </label>
                         </td>
                 </tr>
                 <tr>
                         <td>Blood Group:</td>
                         <td><input type="text" class="form-control" name="bgroup" placeholder="Ex:- B+, O-"></td>
+                </tr>
+                <tr>
+                        <td>Aadhaar No:</td>
+                        <td><input type="number" class="form-control" name="aadhaar" placeholder="4444 5555 6666"></td>
                 </tr>
                 <tr>
                         <td colspan="2"><h4>Address:</h4> <hr></td>
@@ -101,18 +105,18 @@
                 </tr>
                 <tr>
                         <td>Phone:</td>
-                        <td><input type="tel" class="form-control" name="primaryno"></td>
+                        <td><input type="number" class="form-control" name="primaryno"></td>
                 </tr>
                 <tr>
                         <td>Phone (Alternative):</td>
-                        <td><input type="tel" class="form-control" name="alterno"></td>
+                        <td><input type="number" class="form-control" name="alterno"></td>
                 </tr>
                 <tr>
                         <td colspan="2"><h4>Last School Details:</h4><hr></td>
                 </tr>
                 <tr>
                         <td>Class:</td>
-                        <td><select class="form-control" name="lastclass">
+                        <td><select class="form-control" name="oldclass">
                                 <option value="Nurs.">Nurs.</option>
                                 <option value="LKG">LKG</option>
                                 <option value="UKG">UKG</option>
@@ -129,7 +133,7 @@
                 </tr>
                 <tr>
                         <td>School Name:</td>
-                        <td><input type="text" class="form-control" name="lastschool"></td>
+                        <td><input type="text" class="form-control" name="oldschool"></td>
                 </tr>
                 <tr>
                         <td>Photo:</td>
@@ -138,11 +142,17 @@
                         </td>
                 </tr>
                 <tr>
+                        <td>Document:</td>
+                        <td>
+                                <input type="file" class="form-control-file" name="sdocument" accept="image/png,.jpeg,.jpg" >
+                        </td>
+                </tr>
+                <tr>
                         <td colspan="2"><h4>Admission Details:</h4><hr></td>
                 </tr>
                 <tr>
                         <td>Class:</td>
-                        <td><select class="form-control" name="class">
+                        <td><select class="form-control" name="newclass">
                                 <option value="Nurs.">Nurs.</option>
                                 <option value="LKG">LKG</option>
                                 <option value="UKG">UKG</option>
