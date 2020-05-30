@@ -53,6 +53,70 @@
 			echo "Document sent";
 		}
 
+		$sql ="INSERT INTO admission(
+			sname,
+			fname,
+			mname,
+			pname,
+			foccup,
+			moccup,
+			poccup,
+			dob,
+			gender,
+			religion,
+			category,
+			bgroup,
+			aadhaar,
+			address,
+			dist,
+			state,
+			pincode,
+			phone,
+			altphone,
+			oldclass,
+			oldschool,
+			photo,
+			document_image,
+			newclass,
+			newsection,
+			newroll,
+			admdate
+		) VALUES (
+			'{$sname}',
+			'{$fname}',
+			'{$mname}',
+			'{$pname}',
+			'{$foccup}',
+			'{$moccup}',
+			'{$poccup}',
+			'{$dob}',
+			'{$gender}',
+			'{$religion}',
+			'{$category}',
+			'{$bgroup}',
+			'{$document}',
+			'{$address}',
+			'{$dist}',
+			'{$state}',
+			{$pincode},
+			{$pnumber},
+			{$altnumber},
+			'{$oldclass}',
+			'{$oldschool}',
+			'{$imagename}',
+			'{$documentname}',
+			'{$newclass}',
+			'{$section}',
+			{$roll},
+			'{$admindate}'
+		)";
+
+		if(mysqli_query($conn,$sql)){
+			echo "Successfully Inserted";
+		}
+		else
+			echo "Error".mysqli_error($conn);
+
 
 	}
 

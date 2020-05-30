@@ -170,11 +170,11 @@
                 <tr>
                         <td>Section:</td>
                         <td><select class="form-control" name="section">
-                                <option value="1">A</option>
-                                <option value="2">B</option>
-                                <option value="3">C</option>
-                                <option value="4">D</option>
-                                <option value="5">E</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
                         </select>
                         </td>
                 </tr>
