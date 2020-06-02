@@ -56,3 +56,14 @@ foreground: #3498db;
     font-weight:700;
     margin:10px 0 3px 0!important;
 }
+.errorMsg{
+    font-size:14px;
+    color: red;
+    padding: 3px 0;
+}
+#errorAadhaar,#errorPincode,#errorPhone1,#errorPhone2{
+    display: none;
+}
+#student_image,#student_document{
+    display: none;
+}

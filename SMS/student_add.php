@@ -14,19 +14,19 @@
 </div>
 <div class="row">
 <div class="form">
-        <form method="POST" action="include/sql/sql_student_add.php" enctype="multipart/form-data">
+        <form method="POST" onsubmit="return validateForm()" enctype="multipart/form-data">
         <table>
                 <tr>
                         <td>Name:</td>
-                        <td><input type="text" class="form-control"  name="sname" required></td>
+                        <td><input type="text" class="form-control"  name="sname"></td>
                 </tr>
                 <tr>
                         <td>Father's Name:</td>
-                        <td><input type="text" class="form-control" name="fname" required></td>
+                        <td><input type="text" class="form-control" name="fname"></td>
                 </tr>
                 <tr>
                         <td>Mother's Name:</td>
-                        <td><input type="text" class="form-control" name="mname" required></td>
+                        <td><input type="text" class="form-control" name="mname"></td>
                 </tr>
                 <tr>
                         <td>Parent's Name:</td>
@@ -34,11 +34,11 @@
                 </tr>
                 <tr>
                         <td>Father's Occupation:</td>
-                        <td><input type="text" class="form-control" name="foccup" required></td>
+                        <td><input type="text" class="form-control" name="foccup"></td>
                 </tr>
                 <tr>
                         <td>Mother's Occupation:</td>
-                        <td><input type="text" class="form-control" name="moccup" required></td>
+                        <td><input type="text" class="form-control" name="moccup"></td>
                 </tr>
                 <tr>
                         <td>Parent's Occupation:</td>
@@ -46,20 +46,20 @@
                 </tr>
                 <tr>
                         <td>Date of Birth(DOB):</td>
-                        <td><input type="date" class="form-control" name="dob" required></td>
+                        <td><input type="date" class="form-control" name="dob"></td>
                 </tr>
                 <tr>
                         <td>Gender:</td>
                         <td>
-                        <input type="radio" name="gender" value="male" required> <label>Male </label>
-                        <input type="radio" name="gender" value="female" required> <label>Female </label>
-                        <input type="radio" name="gender" value="other" required> <label>Other </label>
+                        <input type="radio" name="gender" value="male"> <label>Male </label>
+                        <input type="radio" name="gender" value="female"> <label>Female </label>
+                        <input type="radio" name="gender" value="other"> <label>Other </label>
                         </td>
                 </tr>
                 <tr>
                         <td>Religion:</td>
                         <td>
-                                <select class="form-control" name="religion" required>
+                                <select class="form-control" name="religion">
                                         <option class="droptext" value="None">None</option>
                                         <option class="droptext" value="Hindu">Hindu</option>
                                         <option class="droptext" value="Islam">Islam</option>
@@ -71,9 +71,9 @@
                 <tr>
                         <td>Category:</td>
                         <td>
-                        <input type="radio" name="category" value="general" required> <label>General </label>
-                        <input type="radio" name="category" value="obc" required> <label>OBC </label>
-                        <input type="radio" name="category" value="scst" required> <label>SC/ST </label>
+                        <input type="radio" name="category" value="general"> <label>General </label>
+                        <input type="radio" name="category" value="obc"> <label>OBC </label>
+                        <input type="radio" name="category" value="scst"> <label>SC/ST </label>
                         </td>
                 </tr>
                 <tr>
@@ -82,34 +82,50 @@
                 </tr>
                 <tr>
                         <td>Aadhaar No:</td>
-                        <td><input type="number" class="form-control" name="aadhaar" placeholder="4444 5555 6666"></td>
+                        <td><input type="number" id="documentno" class="form-control" name="aadhaar" placeholder="4444 5555 6666"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="errorAadhaar"><p class="errorMsg"><i>Please Check Aadhaar</i></p></td>
                 </tr>
                 <tr>
                         <td colspan="2"><h4>Address:</h4> <hr></td>
                 </tr>
                 <tr>
                         <td>Address:</td>
-                        <td><input type="text" class="form-control" name="address" required></td>
+                        <td><input type="text" class="form-control" name="address"></td>
                 </tr>
                 <tr>
                         <td>District:</td>
-                        <td><input type="text" class="form-control" name="dist" required></td>
+                        <td><input type="text" class="form-control" name="dist"></td>
                 </tr>
                 <tr>
                         <td>State:</td>
-                        <td><input type="text" class="form-control" name="state" required></td>
+                        <td><input type="text" class="form-control" name="state"></td>
                 </tr>
                 <tr>
                         <td>Pin Code:</td>
-                        <td><input type="number" class="form-control" name="pin" required></td>
+                        <td><input type="number" id="pincode" class="form-control" name="pin"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="errorPincode"><p class="errorMsg"><i>Please Check Pin Code</i></p></td>
                 </tr>
                 <tr>
                         <td>Phone:</td>
-                        <td><input type="number" class="form-control" name="primaryno"></td>
+                        <td><input type="number" id="phone1" class="form-control" name="primaryno"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="errorPhone1"><p class="errorMsg"><i>Please Check Phone No.</i></p></td>
                 </tr>
                 <tr>
                         <td>Phone (Alternative):</td>
-                        <td><input type="number" class="form-control" name="alterno"></td>
+                        <td><input type="number" id="phone2" class="form-control" name="alterno"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="errorPhone2"><p class="errorMsg"><i>Please Check Phone No.</i></p></td>
                 </tr>
                 <tr>
                         <td colspan="2"><h4>Last School Details:</h4><hr></td>
@@ -138,14 +154,22 @@
                 <tr>
                         <td>Photo:</td>
                         <td>
-                                <input type="file" class="form-control-file" name="sphoto" accept="image/png,.jpeg,.jpg" >
+                                <input type="file" id="simage" onchange="ShowImage()" class="form-control-file" name="sphoto" accept="image/png,.jpeg,.jpg" >
                         </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><img src="Data/student_image_and_document/profile.jpe" class="m-2 p-1 img-thumbnail" id="student_image" style="height: 75px;"></td>
                 </tr>
                 <tr>
                         <td>Document:</td>
                         <td>
-                                <input type="file" class="form-control-file" name="sdocument" accept="image/png,.jpeg,.jpg" >
+                                <input type="file" id="sdocument" onclick="ShowDocument()" class="form-control-file" name="sdocument" accept="image/png,.jpeg,.jpg" >
                         </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><img src="Data/student_image_and_document/profile.jpeg" class="m-2 p-1 img-thumbnail" id="student_document" style="height: 75px;"></td>
                 </tr>
                 <tr>
                         <td colspan="2"><h4>Admission Details:</h4><hr></td>
