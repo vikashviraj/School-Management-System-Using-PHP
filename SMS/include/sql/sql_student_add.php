@@ -43,15 +43,13 @@
 
 		$imagename = $_FILES['sphoto']['name'];
 		$imagetmp = $_FILES['sphoto']['tmp_name'];
-		if(move_uploaded_file($imagetmp, "../../Data/student_image_and_document/".$imagename)){
-			echo "Photo sent";
-		}
+
+		$imageNewName = $sname."_".$document.".png";
 
 		$documentname = $_FILES['sdocument']['name'];
 		$documenttmp = $_FILES['sdocument']['tmp_name'];
-		if(move_uploaded_file($documenttmp, "../../Data/student_image_and_document/".$documentname)){
-			echo "Document sent";
-		}
+
+		$documentNewName = $document."_".$sname.".png";
 
 		$sql ="INSERT INTO admission(
 			sname,
@@ -98,20 +96,22 @@
 			'{$address}',
 			'{$dist}',
 			'{$state}',
-			{$pincode},
-			{$pnumber},
-			{$altnumber},
+			'{$pincode}',
+			'{$pnumber}',
+			'{$altnumber}',
 			'{$oldclass}',
 			'{$oldschool}',
-			'{$imagename}',
-			'{$documentname}',
+			'{$imageNewName}',
+			'{$documentNewName}',
 			'{$newclass}',
 			'{$section}',
-			{$roll},
+			'{$roll}',
 			'{$admindate}'
 		)";
 
 		if(mysqli_query($conn,$sql)){
+			move_uploaded_file($imagetmp, "../../Data/student_image_and_document/".$imageNewName);
+			move_uploaded_file($documenttmp, "../../Data/student_image_and_document/".$documentNewName);
 			echo "Successfully Inserted";
 		}
 		else

@@ -14,19 +14,19 @@
 </div>
 <div class="row">
 <div class="form">
-        <form method="POST" onsubmit="return validateForm()" enctype="multipart/form-data">
+        <form method="POST" action="include/sql/sql_student_add.php" onsubmit="return validateForm()" enctype="multipart/form-data">
         <table>
                 <tr>
                         <td>Name:</td>
-                        <td><input type="text" class="form-control"  name="sname"></td>
+                        <td><input type="text" class="form-control"  name="sname" required></td>
                 </tr>
                 <tr>
                         <td>Father's Name:</td>
-                        <td><input type="text" class="form-control" name="fname"></td>
+                        <td><input type="text" class="form-control" name="fname" required></td>
                 </tr>
                 <tr>
                         <td>Mother's Name:</td>
-                        <td><input type="text" class="form-control" name="mname"></td>
+                        <td><input type="text" class="form-control" name="mname" required></td>
                 </tr>
                 <tr>
                         <td>Parent's Name:</td>
@@ -34,11 +34,11 @@
                 </tr>
                 <tr>
                         <td>Father's Occupation:</td>
-                        <td><input type="text" class="form-control" name="foccup"></td>
+                        <td><input type="text" class="form-control" name="foccup" required></td>
                 </tr>
                 <tr>
                         <td>Mother's Occupation:</td>
-                        <td><input type="text" class="form-control" name="moccup"></td>
+                        <td><input type="text" class="form-control" name="moccup" required></td>
                 </tr>
                 <tr>
                         <td>Parent's Occupation:</td>
@@ -46,20 +46,20 @@
                 </tr>
                 <tr>
                         <td>Date of Birth(DOB):</td>
-                        <td><input type="date" class="form-control" name="dob"></td>
+                        <td><input type="date" class="form-control" name="dob" required></td>
                 </tr>
                 <tr>
                         <td>Gender:</td>
                         <td>
-                        <input type="radio" name="gender" value="male"> <label>Male </label>
-                        <input type="radio" name="gender" value="female"> <label>Female </label>
-                        <input type="radio" name="gender" value="other"> <label>Other </label>
+                        <input type="radio" name="gender" value="male" required> <label>Male </label>
+                        <input type="radio" name="gender" value="female" required> <label>Female </label>
+                        <input type="radio" name="gender" value="other" required> <label>Other </label>
                         </td>
                 </tr>
                 <tr>
                         <td>Religion:</td>
                         <td>
-                                <select class="form-control" name="religion">
+                                <select class="form-control" name="religion" required>
                                         <option class="droptext" value="None">None</option>
                                         <option class="droptext" value="Hindu">Hindu</option>
                                         <option class="droptext" value="Islam">Islam</option>
@@ -71,9 +71,9 @@
                 <tr>
                         <td>Category:</td>
                         <td>
-                        <input type="radio" name="category" value="general"> <label>General </label>
-                        <input type="radio" name="category" value="obc"> <label>OBC </label>
-                        <input type="radio" name="category" value="scst"> <label>SC/ST </label>
+                        <input type="radio" name="category" value="general" required> <label>General </label>
+                        <input type="radio" name="category" value="obc" required> <label>OBC </label>
+                        <input type="radio" name="category" value="scst" required> <label>SC/ST </label>
                         </td>
                 </tr>
                 <tr>
@@ -82,7 +82,7 @@
                 </tr>
                 <tr>
                         <td>Aadhaar No:</td>
-                        <td><input type="number" id="documentno" class="form-control" name="aadhaar" placeholder="4444 5555 6666"></td>
+                        <td><input type="text" id="documentno" oninput="formatAadhaar()" onclick="clearAadhaar()" class="form-control" name="aadhaar" placeholder="4444 5555 6666"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -93,19 +93,19 @@
                 </tr>
                 <tr>
                         <td>Address:</td>
-                        <td><input type="text" class="form-control" name="address"></td>
+                        <td><input type="text" class="form-control" name="address" required></td>
                 </tr>
                 <tr>
                         <td>District:</td>
-                        <td><input type="text" class="form-control" name="dist"></td>
+                        <td><input type="text" class="form-control" name="dist" required></td>
                 </tr>
                 <tr>
                         <td>State:</td>
-                        <td><input type="text" class="form-control" name="state"></td>
+                        <td><input type="text" class="form-control" name="state" required></td>
                 </tr>
                 <tr>
                         <td>Pin Code:</td>
-                        <td><input type="number" id="pincode" class="form-control" name="pin"></td>
+                        <td><input type="number" id="pincode" class="form-control" name="pin" required></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -113,7 +113,7 @@
                 </tr>
                 <tr>
                         <td>Phone:</td>
-                        <td><input type="number" id="phone1" class="form-control" name="primaryno"></td>
+                        <td><input type="number" id="phone1" class="form-control" name="primaryno" required></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -154,22 +154,22 @@
                 <tr>
                         <td>Photo:</td>
                         <td>
-                                <input type="file" id="simage" onchange="ShowImage()" class="form-control-file" name="sphoto" accept="image/png,.jpeg,.jpg" >
+                                <input type="file" id="upload_image" onchange="ShowImage()" class="form-control-file" name="sphoto" accept="image/png,.jpeg,.jpg">
                         </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><img src="Data/student_image_and_document/profile.jpe" class="m-2 p-1 img-thumbnail" id="student_image" style="height: 75px;"></td>
+                    <td><img class="m-2 p-1 img-thumbnail" height="75" width="75" id="student_image"></td>
                 </tr>
                 <tr>
                         <td>Document:</td>
                         <td>
-                                <input type="file" id="sdocument" onclick="ShowDocument()" class="form-control-file" name="sdocument" accept="image/png,.jpeg,.jpg" >
+                                <input type="file" id="upload_document" onchange="ShowDocument()" class="form-control-file" name="sdocument" accept="image/png,.jpeg,.jpg" >
                         </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><img src="Data/student_image_and_document/profile.jpeg" class="m-2 p-1 img-thumbnail" id="student_document" style="height: 75px;"></td>
+                    <td><img  class="m-2 p-1 img-thumbnail" height="70" width="100" id="student_document"></td>
                 </tr>
                 <tr>
                         <td colspan="2"><h4>Admission Details:</h4><hr></td>
@@ -208,7 +208,7 @@
                 </tr>
                 <tr>
                         <td>Admission Date:</td>
-                        <td><input type="date" class="form-control" name="addate"></td>
+                        <td><input type="date" class="form-control" name="addate" required></td>
                 </tr>
                 <tr>
                         <td><input type="submit" class="btn pt-1 pl-3 pr-3 pb-1 btn-success mt-4 mb-3" name="register" value="Register"></td>

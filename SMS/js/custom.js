@@ -12,19 +12,31 @@ function showMenu1(){
         document.getElementById("stddropicon").className = "fa fa-caret-right";
     }
 }
-
+function formatAadhaar() {
+    var Aadhaar = document.getElementById("documentno");
+    var len = Aadhaar.value.length;
+    var sp = " ";
+    if(len == 4 || len == 9){
+        Aadhaar.value = Aadhaar.value.concat(sp);
+    }
+}
+function clearAadhaar(){
+    document.getElementById("documentno").value = "";
+}
 function ShowImage(){
-    var imgTag = document.getElementById("student_image");
-    imgTag.style.display = "block";
-    var file = document.getElementById("simage");
-    imgTag.src = file.value;
+    var upload = document.getElementById("upload_image");
+    var url = URL.createObjectURL(upload.files[0]);
+    var image = document.getElementById("student_image");
+    image.src = url;
+    image.style.display = "block";
 }
 
 function ShowDocument(){
-    var imgTag = document.getElementById("student_document");
-    imgTag.style.display = "block";
-    var file = document.getElementById("sdocument");
-    imgTag.src = file.value;
+    var upload = document.getElementById("upload_document");
+    var url = URL.createObjectURL(upload.files[0]);
+    var image = document.getElementById("student_document");
+    image.src = url;
+    image.style.display = "block";
 }
 
 function showMenu2(){
@@ -67,7 +79,7 @@ function validateForm(){
 
     if(documentno.value != ""){
        var len = documentno.value.length;
-        if(len != 12){
+        if(len != 14){
             document.getElementById("errorAadhaar").style.display = "block";
             $check = false;
         } else{
