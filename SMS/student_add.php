@@ -5,10 +5,10 @@
 ?>
 <div class="container-fluid student_add">
 <div class="row">
-        <div class="col-md-1 bg-info">
-               <div align="center"><a href="index.php" class="btn btn-light text-dark pt-1 pl-3 pr-3 pb-1 mt-1 mb-1"><b>Back</b></a></div>
+        <div class="col-md-2 bg-info">
+               <div align="center" class="btn-light text-dark pt-1 pl-3 pr-3 pb-1 m-1 rounded"><a href="index.php" ><i class="fa fa-home text-dark pr-1"> </i></a><span><b>- Student</b></span><a href="student_add.php" class="text-danger fw-bold"> - Add</a></div>
         </div>
-        <div class="col-md-11 bg-info">
+        <div class="col-md-10 bg-info">
                 <h2 class="text-center heading-title">Admission</h2>
         </div>
 </div>
@@ -60,7 +60,7 @@
                         <td>Religion:</td>
                         <td>
                                 <select class="form-control" name="religion" required>
-                                        <option class="droptext" value="None">None</option>
+                                    <option disabled selected value>Choose</option>
                                         <option class="droptext" value="Hindu">Hindu</option>
                                         <option class="droptext" value="Islam">Islam</option>
                                         <option class="droptext" value="Sikh">Sikh</option>
@@ -133,6 +133,7 @@
                 <tr>
                         <td>Class:</td>
                         <td><select class="form-control" name="oldclass">
+                                <option disabled selected value>Choose</option>
                                 <option value="Nurs.">Nurs.</option>
                                 <option value="LKG">LKG</option>
                                 <option value="UKG">UKG</option>
@@ -177,6 +178,7 @@
                 <tr>
                         <td>Class:</td>
                         <td><select class="form-control" name="newclass">
+                            <option disabled selected value>Choose</option>
                                 <option value="Nurs.">Nurs.</option>
                                 <option value="LKG">LKG</option>
                                 <option value="UKG">UKG</option>
@@ -194,6 +196,7 @@
                 <tr>
                         <td>Section:</td>
                         <td><select class="form-control" name="section">
+                            <option disabled selected value>Choose</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
                                 <option value="C">C</option>
