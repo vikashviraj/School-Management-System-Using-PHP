@@ -67,3 +67,13 @@ foreground: #3498db;
 #student_image,#student_document{
     display: none;
 }
+
+/* Student View Start */
+.student-table{
+    margin: 100px auto!important;
+}
+.student-view table,th,td{
+    padding:5px 10px!important;
+    text-align:center;
+   
+}
