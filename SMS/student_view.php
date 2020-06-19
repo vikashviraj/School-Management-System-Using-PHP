@@ -1,7 +1,8 @@
 <?php
         include 'include/header.php';
         include 'include/menu.php';
-        include 'include/top-header.php';
+		include 'include/top-header.php';
+		include 'include/sql/db_connection.php';
 ?>
 <div class="container-fluid student-view">
 <div class="row">
@@ -59,7 +60,7 @@
 			</td>
 		</tr>
 		</table>
-	<table class="table table-striped table-light table-bordered table-hover mt-1">
+	<table class="table table-striped table-light table-bordered table-hover mt-1 std_view">
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col">SNO.</th>
@@ -73,66 +74,55 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td scope="row">1.</td>
-				<td>89</td>
-				<td>A</td>
-				<td>Ram Kumar</td>
-				<td>Shyam Kumar</td>
-				<td>9955662993</td>
-				<td>13/06/2020</td>
-				<td>
-					<i class="fa fa-edit btn btn-primary py-1 px-2"></i>
-					<i class="fa fa-eye btn btn-info py-1 px-2"></i>
-					<i class="fa fa-trash btn btn-danger py-1 px-2"></i>
-					
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">2.</td>
-				<td>89</td>
-				<td>A</td>
-				<td>Ram Kumar</td>
-				<td>Shyam Kumar</td>
-				<td>9955662993</td>
-				<td>13/06/2020</td>
-				<td>
-					<i class="fa fa-edit btn btn-primary py-1 px-2"></i>
-					<i class="fa fa-eye btn btn-info py-1 px-2"></i>
-					<i class="fa fa-trash btn btn-danger py-1 px-2"></i>
-					
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">3.</td>
-				<td>89</td>
-				<td>A</td>
-				<td>Ram Kumar</td>
-				<td>Shyam Kumar</td>
-				<td>9955662993</td>
-				<td>13/06/2020</td>
-				<td>
-					<i class="fa fa-edit btn btn-primary py-1 px-2"></i>
-					<i class="fa fa-eye btn btn-info py-1 px-2"></i>
-					<i class="fa fa-trash btn btn-danger py-1 px-2"></i>
-					
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">4.</td>
-				<td>89</td>
-				<td>A</td>
-				<td>Ram Kumar</td>
-				<td>Shyam Kumar</td>
-				<td>9955662993</td>
-				<td>13/06/2020</td>
-				<td>
-					<i class="fa fa-edit btn btn-primary py-1 px-2"></i>
-					<i class="fa fa-eye btn btn-info py-1 px-2"></i>
-					<i class="fa fa-trash btn btn-danger py-1 px-2"></i>
-					
-				</td>
-			</tr>
+		<?php 
+
+			$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission";
+
+			$table = mysqli_query($conn,$sql);
+			$i = 1;
+			if(mysqli_num_rows($table) > 0){
+				while($row = mysqli_fetch_assoc($table)){
+					echo '<tr>
+						<td scope="row">'.$i.'</td>
+						<td>'.$row['newroll'].'</td>
+						<td>'.$row['newsection'].'</td>
+						<td>'.$row['sname'].'</td>
+						<td>'.$row['fname'].'</td>
+						<td>'.$row['phone'].'</td>
+						<td>'.$row['admdate'].'</td>
+						<td>
+							<div class="row">
+								<div class="col-md-4">
+									<form action="include/sql/sql_student_view.php" method="POST">
+									<input type="hidden" name="id" value="'.$row['id'].'">
+									<button class="fa fa-edit btn btn-primary py-1 px-2" name="edit_std"></button>
+									</form>
+								</div>
+								<div class="col-md-4">
+									<form action="student_single_view.php" method="POST">
+									<input type="hidden" name="id" value="'.$row['id'].'">
+									<button class="fa fa-eye btn btn-info py-1 px-2" name="view_std"></button>
+									</form>
+								</div>
+								<div class="col-md-4">
+									<form action="include/sql/sql_student_view.php" method="POST">
+										<input type="hidden" name="id" value="'.$row['id'].'">
+										<button class="fa fa-trash btn btn-danger py-1 px-2" name="remove_std"></button>
+									</form>
+								</div>
+							</div>
+						</td>
+					</tr>';
+					$i++;
+				}
+			}else{
+				echo '<tr>
+					<td colspan="8">No Records Found.</td>
+				</tr>';
+			}
+
+		
+		?>
 		</tbody>
 	</table>
 	</div>
