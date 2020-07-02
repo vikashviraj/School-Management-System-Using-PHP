@@ -110,8 +110,8 @@
 		)";
 
 		if(mysqli_query($conn,$sql)){
-			move_uploaded_file($imagetmp, "../../Data/student_image_and_document/".$imageNewName);
-			move_uploaded_file($documenttmp, "../../Data/student_image_and_document/".$documentNewName);
+			move_uploaded_file($imagetmp, "student_image_and_document/".$imageNewName);
+			move_uploaded_file($documenttmp, "student_image_and_document/".$documentNewName);
 			echo "Successfully Inserted";
 		}
 		else

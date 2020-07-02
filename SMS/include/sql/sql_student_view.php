@@ -1,18 +1,16 @@
 <?php
     include 'db_connection.php';
-    //Edit Student Info
-    if(isset($_POST['edit_std'])){
-        echo "Edit Std";
-    }
+
     //Remove/Delete Student Info
     if(isset($_POST['remove_std'])){
         $id = $_POST['id'];
-        
         $sql = "DELETE FROM admission WHERE id = '$id'";
-        if(mysqli_query($conn,$sql)){
-            echo "Removed";
+        if(!mysqli_query($conn,$sql)){
+            $_SESSION['std_success'] = "Successfully Deleted";
+            header("location:../../student_view.php");
         }else{
-            echo "Error".mysqli_error($conn);
+            $_SESSION['std_error'] = "Something Wrong";
+            header("location:../../student_view.php");
         }
     }
 

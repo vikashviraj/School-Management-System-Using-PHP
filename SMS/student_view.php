@@ -1,8 +1,8 @@
 <?php
-        include 'include/header.php';
+		include 'include/sql/db_connection.php';
+		include 'include/header.php';
         include 'include/menu.php';
 		include 'include/top-header.php';
-		include 'include/sql/db_connection.php';
 ?>
 <div class="container-fluid student-view">
 <div class="row">
@@ -15,6 +15,17 @@
 </div>
 <div class="row">
 	<div class="student-table">
+		<?php
+			if(isset($_SESSION['std_success'])){
+				echo '<p class="bg-success text-light px-2 py-1 my-1">'.$_SESSION['std_success'].'</p>';
+				unset($_SESSION['std_success']);
+			}
+			if(isset($_SESSION['std_error'])){
+				echo '<p class="bg-danger text-light px-2 py-1 my-1">'.$_SESSION['std_error'].'</p>';
+				unset($_SESSION['std_error']);
+			}
+
+		?>
 		<table class="table table-dark table-bordered">
 		<tr>
 			<td>
@@ -93,7 +104,7 @@
 						<td>
 							<div class="row">
 								<div class="col-md-4">
-									<form action="include/sql/sql_student_view.php" method="POST">
+									<form action="./student_edit.php" method="POST">
 									<input type="hidden" name="id" value="'.$row['id'].'">
 									<button class="fa fa-edit btn btn-primary py-1 px-2" name="edit_std"></button>
 									</form>

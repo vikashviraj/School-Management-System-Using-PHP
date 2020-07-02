@@ -1,6 +1,6 @@
 <?php
 	//Database connection
-
+	session_start();
 	$dbname = 'sms';
 	$host = 'localhost';
 	$username = 'root';
