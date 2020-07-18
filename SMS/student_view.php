@@ -27,11 +27,12 @@
 
 		?>
 		<table class="table table-dark table-bordered">
+		<form method="POST">
 		<tr>
 			<td>
 				<select class="py-1" name="class" id="class">
 					<option value disabled selected>Class</option>
-					<option value="NUR">Nur.</option>
+					<option value="Nurs.">Nur.</option>
 					<option value="LKG">LKG</option>
 					<option value="UKG">UKG</option>
 					<option value="1">1</option>
@@ -67,9 +68,10 @@
 				<input type="text" name="name" id="name" placeholder="Name" class="py-1" style="width:200px;">
 			</td>
 			<td>
-				<input type="submit" value="Search" class="btn btn-warning py-1 px-2">
+				<input type="submit" value="Search" name="stdsearch" class="btn btn-warning py-1 px-2">
 			</td>
 		</tr>
+		</form>
 		</table>
 	<table class="table table-striped table-light table-bordered table-hover mt-1 std_view">
 		<thead class="thead-dark">
@@ -86,8 +88,30 @@
 		</thead>
 		<tbody>
 		<?php 
+			if(isset($_POST['stdsearch'])){
+				$class = isset($_POST['class']) ? $_POST['class'] : null;
+				$section = isset($_POST['section']) ? $_POST['section'] : null;
+				$roll = $_POST['roll'];
+				$idcard = $_POST['stdid'];
+				$aadhaar = $_POST['aadhaar'];
+				$name = $_POST['name'];
 
-			$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission";
+				if($class!= null){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE newclass = '{$class}'";
+				}else if($section != null){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE newsection = '{$section}'";
+				}else if($roll != ""){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE newroll = '{$roll}'";
+				}else if($aadhaar != ""){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE aadhaar = '{$aadhaar}'";
+				}else if($name != ""){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE sname LIKE '%{$name}%'";
+				}else{
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission";
+				}
+			}
+			if(!isset($_POST['stdsearch']))
+				$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission";
 
 			$table = mysqli_query($conn,$sql);
 			$i = 1;
