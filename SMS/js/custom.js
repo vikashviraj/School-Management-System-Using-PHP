@@ -1,5 +1,4 @@
 function showMenu1(){
-
     if(document.getElementById("studentsubmenu").style.display == "none"){
         document.getElementById("studentsubmenu").style.display = "block";
         document.getElementById("stddropicon").className = "fa fa-caret-down";
@@ -12,6 +11,7 @@ function showMenu1(){
         document.getElementById("stddropicon").className = "fa fa-caret-right";
     }
 }
+
 function formatAadhaar() {
     var Aadhaar = document.getElementById("documentno");
     var len = Aadhaar.value.length;

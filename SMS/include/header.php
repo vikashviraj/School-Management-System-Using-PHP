@@ -15,4 +15,5 @@
 </head>
 
 <body>
+<script src="./js/custom.js"></script>
   <div class="row main-container">

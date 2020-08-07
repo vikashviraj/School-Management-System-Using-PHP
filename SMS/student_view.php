@@ -95,7 +95,8 @@
 				$idcard = $_POST['stdid'];
 				$aadhaar = $_POST['aadhaar'];
 				$name = $_POST['name'];
-
+				
+				//for single filter
 				if($class!= null){
 					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE newclass = '{$class}'";
 				}else if($section != null){
@@ -109,6 +110,18 @@
 				}else{
 					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission";
 				}
+
+				//For multiple filter
+				if($class != null && $section != null && $roll == "" && $aadhaar == "" && $name == ""){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE newclass = '{$class}' AND newsection = '{$section}'";
+				}else if($class != null && $section != null && $roll != "" && $aadhaar == "" && $name == ""){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE newclass = '{$class}' AND newsection = '{$section}' AND newroll = '{$roll}'";
+				}else if($class != null && $section != null && $name != "" && $roll == "" && $aadhaar == ""){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE newclass = '{$class}' AND newsection = '{$section}' AND sname LIKE '%{$name}%'";
+				}else if($class != null && $section == null && $name != "" && $roll == "" && $aadhaar == ""){
+					$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission WHERE newclass = '{$class}' AND sname LIKE '%{$name}%'";
+				}
+	
 			}
 			if(!isset($_POST['stdsearch']))
 				$sql = "SELECT newroll,newsection,sname,fname,phone,admdate,id FROM admission";

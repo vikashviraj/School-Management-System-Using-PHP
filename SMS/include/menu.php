@@ -13,8 +13,6 @@
         <div class="submenu" id="studentsubmenu">
           <a href="student_add.php"><i class="fa fa-graduation-cap"></i>Add</a>
           <a href="student_view.php"><i class="fa fa-graduation-cap"></i>View</a>
-          <a href="student_update.php"><i class="fa fa-graduation-cap"></i>Update</a>
-          <a href="student_remove.php"><i class="fa fa-graduation-cap"></i>Remove</a>
         </div>
         <a href="javascript:void(0)" onclick="showMenu2()"><i class="fa fa-users"></i>Teacher <i id="teadropicon" class="fa fa-caret-right"></i></a>
         <div class="submenu" id="teachersubmenu">
